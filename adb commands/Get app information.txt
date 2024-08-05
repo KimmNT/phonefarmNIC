@@ -1,0 +1,10 @@
+Step1: shell pm list packages -3
+-> get installed apps from third-party
+-> find app name (ex: free.vpn.unblock.proxy.turbovpn)
+
+Step2: shell dumpsys package <free.vpn.unblock.proxy.turbovpn> | grep -i activity
+-> replace <> with app name got from step 1
+-> copy the StartupActivity or Main (ex: free.vpn.unblock.proxy.turbovpn/.activity.StartupActivity)
+
+Step3: shell am start -n <free.vpn.unblock.proxy.turbovpn>/<.activity.StartupActivity>
+-> start the app
