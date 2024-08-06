@@ -51,6 +51,8 @@
             this.txtY1 = new System.Windows.Forms.TextBox();
             this.Controller = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtFindText = new System.Windows.Forms.TextBox();
+            this.btnFindText = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.txtAppName = new System.Windows.Forms.TextBox();
             this.btnGetActivity = new System.Windows.Forms.Button();
@@ -69,8 +71,7 @@
             this.btnRotation = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnUnlock = new System.Windows.Forms.Button();
-            this.btnFindText = new System.Windows.Forms.Button();
-            this.txtFindText = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevices)).BeginInit();
             this.Controller.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -307,6 +308,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.txtFindText);
             this.tabPage1.Controls.Add(this.btnFindText);
             this.tabPage1.Controls.Add(this.btnGetScreenContent);
@@ -318,6 +320,24 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Manual";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // txtFindText
+            // 
+            this.txtFindText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFindText.Location = new System.Drawing.Point(132, 206);
+            this.txtFindText.Name = "txtFindText";
+            this.txtFindText.Size = new System.Drawing.Size(272, 24);
+            this.txtFindText.TabIndex = 34;
+            // 
+            // btnFindText
+            // 
+            this.btnFindText.Location = new System.Drawing.Point(6, 201);
+            this.btnFindText.Name = "btnFindText";
+            this.btnFindText.Size = new System.Drawing.Size(120, 37);
+            this.btnFindText.TabIndex = 33;
+            this.btnFindText.Text = "Read Existed Text";
+            this.btnFindText.UseVisualStyleBackColor = true;
+            this.btnFindText.Click += new System.EventHandler(this.btnFindText_Click);
             // 
             // tabPage2
             // 
@@ -520,23 +540,15 @@
             this.btnUnlock.UseVisualStyleBackColor = true;
             this.btnUnlock.Click += new System.EventHandler(this.btnUnlock_Click);
             // 
-            // btnFindText
+            // label8
             // 
-            this.btnFindText.Location = new System.Drawing.Point(6, 201);
-            this.btnFindText.Name = "btnFindText";
-            this.btnFindText.Size = new System.Drawing.Size(120, 37);
-            this.btnFindText.TabIndex = 33;
-            this.btnFindText.Text = "Read Existed Text";
-            this.btnFindText.UseVisualStyleBackColor = true;
-            this.btnFindText.Click += new System.EventHandler(this.btnFindText_Click);
-            // 
-            // txtFindText
-            // 
-            this.txtFindText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFindText.Location = new System.Drawing.Point(132, 206);
-            this.txtFindText.Name = "txtFindText";
-            this.txtFindText.Size = new System.Drawing.Size(272, 24);
-            this.txtFindText.TabIndex = 34;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 254);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 16);
+            this.label8.TabIndex = 46;
+            this.label8.Text = "label1";
             // 
             // PhonesController
             // 
@@ -615,6 +627,7 @@
         private System.Windows.Forms.Button btnUnlock;
         private System.Windows.Forms.TextBox txtFindText;
         private System.Windows.Forms.Button btnFindText;
+        private System.Windows.Forms.Label label8;
     }
 }
 
