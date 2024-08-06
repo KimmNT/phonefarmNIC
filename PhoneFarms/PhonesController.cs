@@ -338,18 +338,53 @@ namespace PhoneFarms
 
         private async void btnUnlock_Click(object sender, EventArgs e)
         {
-              List<string> selectedDevices = GetSelectedDevices();
+            List<string> selectedDevices = GetSelectedDevices();
 
             // Convert list to array for parallel execution
             string[] devicesArray = selectedDevices.ToArray();
             var tasks = new Task[devicesArray.Length];
             for (int i = 0; i < devicesArray.Length; i++)
             {
-                tasks[i] = DeviceManager.Swipe(devicesArray[i], 1, 250, 1050, 250, 350, 0);
+                //tasks[i] = DeviceManager.Swipe(devicesArray[i], 1, 250, 1050, 250, 350, 0);
+                tasks[i] = ADBHelper.ExecuteAdbCommandAsync(devicesArray[i], "shell wm size 1080x1920"); 
             }
 
             // Wait for all tasks to complete
             await Task.WhenAll(tasks);
+        }
+
+        private async void btnFindText_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridViewDevices.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells["Select"].Value))
+                {
+                    string device = row.Cells["DeviceID"].Value.ToString();
+                    bool result = await DeviceManager.IsTextPresentInScreenAsync(device, "FHD(1920x1080)");
+                    if (result)
+                    {
+                        await DeviceManager.TapButtonWithTextAsync(device, "FHD(1920x1080)");
+                    }
+                    else
+                    {
+                        await DeviceManager.GoBackToHomeScreenAsync(device);
+                    }
+                }
+            }
+        }
+
+        private async void btnSetting_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridViewDevices.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells["Select"].Value))
+                {
+                    string device = row.Cells["DeviceID"].Value.ToString();
+
+                    await ADBHelper.ExecuteAdbCommandAsync(device, "shell am start -a android.settings.DISPLAY_SETTINGS");
+                    // }
+                }
+            }
         }
     }
 }

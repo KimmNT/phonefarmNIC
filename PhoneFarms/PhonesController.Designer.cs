@@ -66,9 +66,11 @@
             this.txtTapX = new System.Windows.Forms.TextBox();
             this.btnTapping = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnRotation = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnUnlock = new System.Windows.Forms.Button();
+            this.btnFindText = new System.Windows.Forms.Button();
+            this.txtFindText = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevices)).BeginInit();
             this.Controller.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -151,7 +153,6 @@
             this.btnYoutube.TabIndex = 28;
             this.btnYoutube.Text = "Youtube";
             this.btnYoutube.UseVisualStyleBackColor = true;
-            this.btnYoutube.Visible = false;
             this.btnYoutube.Click += new System.EventHandler(this.btnYoutube_Click);
             // 
             // lbDeviceCount
@@ -306,6 +307,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.txtFindText);
+            this.tabPage1.Controls.Add(this.btnFindText);
             this.tabPage1.Controls.Add(this.btnGetScreenContent);
             this.tabPage1.Controls.Add(this.btnReadButtons);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -324,7 +327,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(429, 555);
+            this.tabPage2.Size = new System.Drawing.Size(429, 503);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Get App Info";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -361,7 +364,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(429, 555);
+            this.tabPage3.Size = new System.Drawing.Size(429, 503);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Swipe Custom";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -416,7 +419,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(429, 555);
+            this.tabPage4.Size = new System.Drawing.Size(429, 503);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Tap Custom";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -478,22 +481,10 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(429, 555);
+            this.tabPage5.Size = new System.Drawing.Size(429, 503);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Custom Features";
             this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(6, 101);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 41);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Reels";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnRotation
             // 
@@ -507,6 +498,18 @@
             this.btnRotation.UseVisualStyleBackColor = true;
             this.btnRotation.Click += new System.EventHandler(this.btnRotation_Click);
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(6, 101);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 41);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Reels";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // btnUnlock
             // 
             this.btnUnlock.Location = new System.Drawing.Point(830, 556);
@@ -516,6 +519,24 @@
             this.btnUnlock.Text = "UNLOCK";
             this.btnUnlock.UseVisualStyleBackColor = true;
             this.btnUnlock.Click += new System.EventHandler(this.btnUnlock_Click);
+            // 
+            // btnFindText
+            // 
+            this.btnFindText.Location = new System.Drawing.Point(6, 201);
+            this.btnFindText.Name = "btnFindText";
+            this.btnFindText.Size = new System.Drawing.Size(120, 37);
+            this.btnFindText.TabIndex = 33;
+            this.btnFindText.Text = "Read Existed Text";
+            this.btnFindText.UseVisualStyleBackColor = true;
+            this.btnFindText.Click += new System.EventHandler(this.btnFindText_Click);
+            // 
+            // txtFindText
+            // 
+            this.txtFindText.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFindText.Location = new System.Drawing.Point(132, 206);
+            this.txtFindText.Name = "txtFindText";
+            this.txtFindText.Size = new System.Drawing.Size(272, 24);
+            this.txtFindText.TabIndex = 34;
             // 
             // PhonesController
             // 
@@ -538,6 +559,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevices)).EndInit();
             this.Controller.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -591,6 +613,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRotation;
         private System.Windows.Forms.Button btnUnlock;
+        private System.Windows.Forms.TextBox txtFindText;
+        private System.Windows.Forms.Button btnFindText;
     }
 }
 

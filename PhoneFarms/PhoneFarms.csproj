@@ -109,6 +109,9 @@
     <EmbeddedResource Include="ControllerForms\WifiConfig.resx">
       <DependentUpon>WifiConfig.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControllerForms\YoutubeConfig.resx">
+      <DependentUpon>YoutubeConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhonesController.resx">
       <DependentUpon>PhonesController.cs</DependentUpon>
     </EmbeddedResource>

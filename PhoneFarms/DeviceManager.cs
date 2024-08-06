@@ -24,9 +24,9 @@ namespace PhoneFarms.Managers
             await Task.Delay(3000);
         }
 
-        public static async Task HandleSearchBox(string device)
+        public static async Task OpenChromeByURL(string device,string url)
         {
-            await ADBHelper.ExecuteAdbCommandAsync(device, "adb shell input keyevent 84");
+            await ADBHelper.ExecuteAdbCommandAsync(device, "shell am start -a android.intent.action.VIEW -d "+url+" com.android.chrome");
             await Task.Delay(1000);
         }
 
@@ -353,6 +353,35 @@ namespace PhoneFarms.Managers
             }
         }
 
+        public static async Task<bool> IsTextPresentInScreenAsync(string device, string searchText)
+        {
+            try
+            {
+                // Step 1: Dump the UI hierarchy to a file on the device
+                await ADBHelper.ExecuteAdbCommandAsync(device, "shell uiautomator dump /data/local/tmp/ui.xml");
+
+                // Step 2: Pull the XML file from device to local machine
+                string localFilePath = $"./ui_{device}.xml";
+                await ADBHelper.ExecuteAdbCommandAsync(device, $"pull /data/local/tmp/ui.xml {localFilePath}");
+
+                // Step 3: Parse the XML file
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(localFilePath);
+
+                // Find any node that contains the searchText
+                XmlNodeList nodes = xmlDoc.SelectNodes("//node[contains(@text, '" + searchText + "')]");
+
+                // Return true if nodes are found
+                return nodes.Count > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error checking text presence: {ex.Message}");
+                return false;
+            }
+        }
+
+
         // END READING SCREEN CONTENT
 
         public static async Task<int> LoadDevicesAsync(DataGridView dataGridViewDevices)
@@ -594,26 +623,6 @@ namespace PhoneFarms.Managers
         {
             try
             {
-                //bool result = false;
-
-                //while (!result)
-                //{
-                //    // Perform the swipe action
-                //    await Swipe(device, 1, 0, 0, 0, 1350, 0);
-
-                //    // Attempt to tap the button and get the result
-                //    result = await TapButtonWithTextAsync(device, "Tự động xoay");
-
-                //    // Optionally, you may want to add a delay to avoid spamming the actions too quickly
-                //    await Task.Delay(1000); // Delay for 1 second (adjust as needed)
-                //}
-                //await Swipe(device, 1, 0, 0, 0, 1350, 0);
-
-                await TapButtonWithTextAsync(device, "Tự động \nxoay");
-
-                //await TapButtonWithTextAsync(device, "BẬT");
-                //await TapButtonWithTextAsync(device, "HOÀN TẤT");
-                //await GoBackToHomeScreenAsync(device);
             }
             catch (Exception ex)
             {
