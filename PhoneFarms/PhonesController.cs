@@ -182,9 +182,6 @@ namespace PhoneFarms
             }
         }
 
-        private async void btnYoutube_Click(object sender, EventArgs e)
-        {
-        }
 
         private void btnImportAPK_Click(object sender, EventArgs e)
         {
@@ -452,6 +449,22 @@ namespace PhoneFarms
 
             // Wait for all tasks to complete
             await Task.WhenAll(tasks);
+        }
+
+        private async void btnShowAll_Click(object sender, EventArgs e)
+        {
+             foreach (DataGridViewRow row in dataGridViewDevices.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells["Select"].Value))
+                {
+                    string device = row.Cells["DeviceID"].Value.ToString();
+
+                    ShowScreen(device);
+                    //await DeviceManager.ShowScreen(device,scrcpyProcesses,dataGridViewDevices);
+
+                    MessageBox.Show(device);
+                }
+            }
         }
     }
 }
