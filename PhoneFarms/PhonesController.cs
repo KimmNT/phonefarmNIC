@@ -346,7 +346,7 @@ namespace PhoneFarms
             for (int i = 0; i < devicesArray.Length; i++)
             {
                 //tasks[i] = DeviceManager.Swipe(devicesArray[i], 1, 250, 1050, 250, 350, 0);
-                tasks[i] = ADBHelper.ExecuteAdbCommandAsync(devicesArray[i], "shell wm size 1080x1920"); 
+                tasks[i] = ADBHelper.ExecuteAdbCommandAsync(devicesArray[i], "shell am start -a android.settings.SECURITY_SETTINGS");
             }
 
             // Wait for all tasks to complete
@@ -385,6 +385,73 @@ namespace PhoneFarms
                     // }
                 }
             }
+        }
+
+        private async void btnResolution_Click(object sender, EventArgs e)
+        {
+            List<string> selectedDevices = GetSelectedDevices();
+
+            // Convert list to array for parallel execution
+            string[] devicesArray = selectedDevices.ToArray();
+            var tasks = new Task[devicesArray.Length];
+            for (int i = 0; i < devicesArray.Length; i++)
+            {
+                tasks[i] = DeviceManager.ChangeResolution(devicesArray[i]);
+            }
+
+            // Wait for all tasks to complete
+            await Task.WhenAll(tasks);
+            MessageBox.Show("Change resolution successfully");
+        }
+
+        private async void btnLanguage_Click(object sender, EventArgs e)
+        {
+            List<string> selectedDevices = GetSelectedDevices();
+
+            // Convert list to array for parallel execution
+            string[] devicesArray = selectedDevices.ToArray();
+            var tasks = new Task[devicesArray.Length];
+            for (int i = 0; i < devicesArray.Length; i++)
+            {
+                tasks[i] = DeviceManager.ChangeLanguage(devicesArray[i]);
+            }
+
+            // Wait for all tasks to complete
+            await Task.WhenAll(tasks);
+            MessageBox.Show("Change language successfully");
+        }
+
+        private async void btnTimeOut_Click(object sender, EventArgs e)
+        {
+            List<string> selectedDevices = GetSelectedDevices();
+
+            // Convert list to array for parallel execution
+            string[] devicesArray = selectedDevices.ToArray();
+            var tasks = new Task[devicesArray.Length];
+            for (int i = 0; i < devicesArray.Length; i++)
+            {
+                tasks[i] = ADBHelper.ExecuteAdbCommandAsync(devicesArray[i], "shell settings put system screen_off_timeout 600000");
+            }
+
+            // Wait for all tasks to complete
+            await Task.WhenAll(tasks);
+            MessageBox.Show("Change timeout successfully");
+        }
+
+        private async void btnLockType_Click(object sender, EventArgs e)
+        {
+            List<string> selectedDevices = GetSelectedDevices();
+
+            // Convert list to array for parallel execution
+            string[] devicesArray = selectedDevices.ToArray();
+            var tasks = new Task[devicesArray.Length];
+            for (int i = 0; i < devicesArray.Length; i++)
+            {
+                tasks[i] = ADBHelper.ExecuteAdbCommandAsync(devicesArray[i], "shell am start -a android.settings.SECURITY_SETTINGS");
+            }
+
+            // Wait for all tasks to complete
+            await Task.WhenAll(tasks);
         }
     }
 }

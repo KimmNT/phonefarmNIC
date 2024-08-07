@@ -51,7 +51,6 @@
             this.txtY1 = new System.Windows.Forms.TextBox();
             this.Controller = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtFindText = new System.Windows.Forms.TextBox();
             this.btnFindText = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -69,10 +68,14 @@
             this.txtTapX = new System.Windows.Forms.TextBox();
             this.btnTapping = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btnLanguage = new System.Windows.Forms.Button();
+            this.btnResolution = new System.Windows.Forms.Button();
             this.btnRotation = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnUnlock = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.btnTimeOut = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btnLockType = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevices)).BeginInit();
             this.Controller.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -80,6 +83,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewDevices
@@ -301,6 +305,7 @@
             this.Controller.Controls.Add(this.tabPage3);
             this.Controller.Controls.Add(this.tabPage4);
             this.Controller.Controls.Add(this.tabPage5);
+            this.Controller.Controls.Add(this.tabPage6);
             this.Controller.Location = new System.Drawing.Point(726, 12);
             this.Controller.Name = "Controller";
             this.Controller.SelectedIndex = 0;
@@ -309,8 +314,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.txtFindText);
             this.tabPage1.Controls.Add(this.btnFindText);
             this.tabPage1.Controls.Add(this.btnGetScreenContent);
@@ -322,16 +325,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Manual";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(6, 254);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 16);
-            this.label8.TabIndex = 46;
-            this.label8.Text = "label1";
             // 
             // txtFindText
             // 
@@ -502,7 +495,6 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.btnRotation);
             this.tabPage5.Controls.Add(this.button1);
             this.tabPage5.Controls.Add(this.btnWifiConfig);
             this.tabPage5.Controls.Add(this.btnFacebookService);
@@ -518,13 +510,33 @@
             this.tabPage5.Text = "Custom Features";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // btnLanguage
+            // 
+            this.btnLanguage.Location = new System.Drawing.Point(296, 13);
+            this.btnLanguage.Name = "btnLanguage";
+            this.btnLanguage.Size = new System.Drawing.Size(133, 40);
+            this.btnLanguage.TabIndex = 41;
+            this.btnLanguage.Text = "Change Language";
+            this.btnLanguage.UseVisualStyleBackColor = true;
+            this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
+            // 
+            // btnResolution
+            // 
+            this.btnResolution.Location = new System.Drawing.Point(16, 62);
+            this.btnResolution.Name = "btnResolution";
+            this.btnResolution.Size = new System.Drawing.Size(133, 41);
+            this.btnResolution.TabIndex = 40;
+            this.btnResolution.Text = "Change Resolution";
+            this.btnResolution.UseVisualStyleBackColor = true;
+            this.btnResolution.Click += new System.EventHandler(this.btnResolution_Click);
+            // 
             // btnRotation
             // 
             this.btnRotation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRotation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRotation.Location = new System.Drawing.Point(145, 101);
+            this.btnRotation.Location = new System.Drawing.Point(155, 13);
             this.btnRotation.Name = "btnRotation";
-            this.btnRotation.Size = new System.Drawing.Size(139, 41);
+            this.btnRotation.Size = new System.Drawing.Size(133, 39);
             this.btnRotation.TabIndex = 39;
             this.btnRotation.Text = "Disable Rotation";
             this.btnRotation.UseVisualStyleBackColor = true;
@@ -552,21 +564,46 @@
             this.btnUnlock.UseVisualStyleBackColor = true;
             this.btnUnlock.Click += new System.EventHandler(this.btnUnlock_Click);
             // 
-            // label9
+            // btnTimeOut
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(66, 254);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 16);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "label1";
+            this.btnTimeOut.Location = new System.Drawing.Point(16, 12);
+            this.btnTimeOut.Name = "btnTimeOut";
+            this.btnTimeOut.Size = new System.Drawing.Size(133, 40);
+            this.btnTimeOut.TabIndex = 46;
+            this.btnTimeOut.Text = "Change TimeOut";
+            this.btnTimeOut.UseVisualStyleBackColor = true;
+            this.btnTimeOut.Click += new System.EventHandler(this.btnTimeOut_Click);
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.btnResolution);
+            this.tabPage6.Controls.Add(this.btnLanguage);
+            this.tabPage6.Controls.Add(this.btnTimeOut);
+            this.tabPage6.Controls.Add(this.btnRotation);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(429, 503);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Setup for new";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // btnLockType
+            // 
+            this.btnLockType.Location = new System.Drawing.Point(932, 556);
+            this.btnLockType.Name = "btnLockType";
+            this.btnLockType.Size = new System.Drawing.Size(86, 37);
+            this.btnLockType.TabIndex = 46;
+            this.btnLockType.Text = "Change LockType";
+            this.btnLockType.UseVisualStyleBackColor = true;
+            this.btnLockType.Click += new System.EventHandler(this.btnLockType_Click);
             // 
             // PhonesController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 605);
+            this.Controls.Add(this.btnLockType);
             this.Controls.Add(this.btnUnlock);
             this.Controls.Add(this.Controller);
             this.Controls.Add(this.btnHome);
@@ -591,6 +628,7 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,8 +677,11 @@
         private System.Windows.Forms.Button btnUnlock;
         private System.Windows.Forms.TextBox txtFindText;
         private System.Windows.Forms.Button btnFindText;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnResolution;
+        private System.Windows.Forms.Button btnLanguage;
+        private System.Windows.Forms.Button btnTimeOut;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button btnLockType;
     }
 }
 

@@ -621,14 +621,94 @@ namespace PhoneFarms.Managers
 
         public static async Task DisableRotation(string device)
         {
+                try
+                {
+                    await ADBHelper.ExecuteAdbCommandAsync(device, "shell settings put system accelerometer_rotation 0");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error opening reel: {ex.Message}");
+                }
+        }
+        public static async Task ChangeResolution(string device)
+        {
             try
             {
+                await ADBHelper.ExecuteAdbCommandAsync(device, "shell am start -a android.settings.DISPLAY_SETTINGS");
+                await Task.Delay(2000);
+                bool result = await DeviceManager.IsTextPresentInScreenAsync(device, "WQHD(2560x1440)");
+                bool result1 = await DeviceManager.IsTextPresentInScreenAsync(device, "HD(1280x720)");
+                if (result)
+                {
+                    await DeviceManager.TapButtonWithTextAsync(device, "WQHD(2560x1440)");
+                    await Task.Delay(2000);
+                    await DeviceManager.TapAsync(device, 800, 800);
+                    await Task.Delay(2000);
+                    await DeviceManager.TapButtonWithTextAsync(device, "ÁP DỤNG");
+                    await Task.Delay(2000);
+                    await DeviceManager.GoBackToHomeScreenAsync(device);
+                }
+                else if (result1)
+                {
+                    await DeviceManager.TapButtonWithTextAsync(device, "HD(1280x720)");
+                    await Task.Delay(2000);
+                    await DeviceManager.TapAsync(device, 400, 400);
+                    await Task.Delay(2000);
+                    await DeviceManager.TapButtonWithTextAsync(device, "ÁP DỤNG");
+                    await Task.Delay(2000);
+                    await DeviceManager.GoBackToHomeScreenAsync(device);
+                }
+                else
+                {
+                    await DeviceManager.GoBackToHomeScreenAsync(device);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error opening reel: {ex.Message}");
             }
         }
-        
+        public static async Task ChangeLanguage(string device)
+        {
+            try
+            {
+                await ADBHelper.ExecuteAdbCommandAsync(device, "shell am start -a android.settings.DISPLAY_SETTINGS");
+                await Task.Delay(2000);
+                bool result1 = await DeviceManager.IsTextPresentInScreenAsync(device, "WQHD(2560x1440)");
+                bool result = await DeviceManager.IsTextPresentInScreenAsync(device, "FHD(1920x1080)");
+                //await ADBHelper.ExecuteAdbCommandAsync(device, "shell am start -a android.settings.LOCALE_SETTINGS");
+                if (result)
+                {
+                    await ADBHelper.ExecuteAdbCommandAsync(device, "shell am start -a android.settings.LOCALE_SETTINGS");
+                    await Task.Delay(2000);
+                    await DeviceManager.TapAsync(device, 800, 800);
+                    await Task.Delay(2000);
+                    await DeviceManager.TapButtonWithTextAsync(device, "Tiếng Việt (Việt Nam)");
+                    await Task.Delay(2000);
+                    await DeviceManager.TapAsync(device, 970, 1150);
+                    await Task.Delay(2000);
+                    await DeviceManager.GoBackToHomeScreenAsync(device);
+                }
+                else if (result1)
+                {
+                    await ADBHelper.ExecuteAdbCommandAsync(device, "shell am start -a android.settings.LOCALE_SETTINGS");
+                    await Task.Delay(2000);
+                    await DeviceManager.TapAsync(device, 800, 1050);
+                    await Task.Delay(2000);
+                    await DeviceManager.TapButtonWithTextAsync(device, "Tiếng Việt (Việt Nam)");
+                    await Task.Delay(2000);
+                    await DeviceManager.TapAsync(device, 1200, 1400);
+                    await Task.Delay(2000);
+                    await DeviceManager.GoBackToHomeScreenAsync(device);
+                }    
+
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error opening reel: {ex.Message}");
+            }
+        }
+
     }
 }
