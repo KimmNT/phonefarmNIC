@@ -447,7 +447,7 @@ namespace PhoneFarms.Managers
                         StartInfo = new ProcessStartInfo
                         {
                             FileName = "scrcpy",
-                            Arguments = $"-s {device}",
+                            Arguments = $"-s {device} --window-width 200 --window-height 300",
                             UseShellExecute = false,
                             RedirectStandardOutput = true,
                             CreateNoWindow = true

@@ -77,6 +77,7 @@
             this.btnUnlock = new System.Windows.Forms.Button();
             this.btnLockType = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnShowAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevices)).BeginInit();
             this.Controller.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -160,7 +161,6 @@
             this.btnYoutube.TabIndex = 28;
             this.btnYoutube.Text = "Youtube";
             this.btnYoutube.UseVisualStyleBackColor = true;
-            this.btnYoutube.Click += new System.EventHandler(this.btnYoutube_Click);
             // 
             // lbDeviceCount
             // 
@@ -315,6 +315,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnShowAll);
             this.tabPage1.Controls.Add(this.txtFindText);
             this.tabPage1.Controls.Add(this.btnFindText);
             this.tabPage1.Controls.Add(this.btnGetScreenContent);
@@ -608,6 +609,16 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // btnShowAll
+            // 
+            this.btnShowAll.Location = new System.Drawing.Point(315, 460);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(108, 37);
+            this.btnShowAll.TabIndex = 35;
+            this.btnShowAll.Text = "Show All";
+            this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
+            // 
             // PhonesController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -694,6 +705,7 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button btnLockType;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnShowAll;
     }
 }
 
