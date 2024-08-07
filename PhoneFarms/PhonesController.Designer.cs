@@ -51,6 +51,7 @@
             this.txtY1 = new System.Windows.Forms.TextBox();
             this.Controller = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnShowAll = new System.Windows.Forms.Button();
             this.txtFindText = new System.Windows.Forms.TextBox();
             this.btnFindText = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -76,8 +77,6 @@
             this.btnRotation = new System.Windows.Forms.Button();
             this.btnUnlock = new System.Windows.Forms.Button();
             this.btnLockType = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnShowAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevices)).BeginInit();
             this.Controller.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -327,6 +326,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Manual";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnShowAll
+            // 
+            this.btnShowAll.Location = new System.Drawing.Point(315, 460);
+            this.btnShowAll.Name = "btnShowAll";
+            this.btnShowAll.Size = new System.Drawing.Size(108, 37);
+            this.btnShowAll.TabIndex = 35;
+            this.btnShowAll.Text = "Show All";
+            this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // txtFindText
             // 
@@ -600,31 +609,11 @@
             this.btnLockType.UseVisualStyleBackColor = true;
             this.btnLockType.Click += new System.EventHandler(this.btnLockType_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1058, 569);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 47;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btnShowAll
-            // 
-            this.btnShowAll.Location = new System.Drawing.Point(315, 460);
-            this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(108, 37);
-            this.btnShowAll.TabIndex = 35;
-            this.btnShowAll.Text = "Show All";
-            this.btnShowAll.UseVisualStyleBackColor = true;
-            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
-            // 
             // PhonesController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 605);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnLockType);
             this.Controls.Add(this.btnUnlock);
             this.Controls.Add(this.Controller);
@@ -704,7 +693,6 @@
         private System.Windows.Forms.Button btnTimeOut;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button btnLockType;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnShowAll;
     }
 }
