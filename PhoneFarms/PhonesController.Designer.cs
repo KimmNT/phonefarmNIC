@@ -68,14 +68,15 @@
             this.txtTapX = new System.Windows.Forms.TextBox();
             this.btnTapping = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.btnLanguage = new System.Windows.Forms.Button();
-            this.btnResolution = new System.Windows.Forms.Button();
-            this.btnRotation = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnUnlock = new System.Windows.Forms.Button();
-            this.btnTimeOut = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.btnResolution = new System.Windows.Forms.Button();
+            this.btnLanguage = new System.Windows.Forms.Button();
+            this.btnTimeOut = new System.Windows.Forms.Button();
+            this.btnRotation = new System.Windows.Forms.Button();
+            this.btnUnlock = new System.Windows.Forms.Button();
             this.btnLockType = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDevices)).BeginInit();
             this.Controller.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -510,38 +511,6 @@
             this.tabPage5.Text = "Custom Features";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // btnLanguage
-            // 
-            this.btnLanguage.Location = new System.Drawing.Point(296, 13);
-            this.btnLanguage.Name = "btnLanguage";
-            this.btnLanguage.Size = new System.Drawing.Size(133, 40);
-            this.btnLanguage.TabIndex = 41;
-            this.btnLanguage.Text = "Change Language";
-            this.btnLanguage.UseVisualStyleBackColor = true;
-            this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
-            // 
-            // btnResolution
-            // 
-            this.btnResolution.Location = new System.Drawing.Point(16, 62);
-            this.btnResolution.Name = "btnResolution";
-            this.btnResolution.Size = new System.Drawing.Size(133, 41);
-            this.btnResolution.TabIndex = 40;
-            this.btnResolution.Text = "Change Resolution";
-            this.btnResolution.UseVisualStyleBackColor = true;
-            this.btnResolution.Click += new System.EventHandler(this.btnResolution_Click);
-            // 
-            // btnRotation
-            // 
-            this.btnRotation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRotation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRotation.Location = new System.Drawing.Point(155, 13);
-            this.btnRotation.Name = "btnRotation";
-            this.btnRotation.Size = new System.Drawing.Size(133, 39);
-            this.btnRotation.TabIndex = 39;
-            this.btnRotation.Text = "Disable Rotation";
-            this.btnRotation.UseVisualStyleBackColor = true;
-            this.btnRotation.Click += new System.EventHandler(this.btnRotation_Click);
-            // 
             // button1
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -553,26 +522,6 @@
             this.button1.Text = "Reels";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnUnlock
-            // 
-            this.btnUnlock.Location = new System.Drawing.Point(830, 556);
-            this.btnUnlock.Name = "btnUnlock";
-            this.btnUnlock.Size = new System.Drawing.Size(84, 37);
-            this.btnUnlock.TabIndex = 45;
-            this.btnUnlock.Text = "UNLOCK";
-            this.btnUnlock.UseVisualStyleBackColor = true;
-            this.btnUnlock.Click += new System.EventHandler(this.btnUnlock_Click);
-            // 
-            // btnTimeOut
-            // 
-            this.btnTimeOut.Location = new System.Drawing.Point(16, 12);
-            this.btnTimeOut.Name = "btnTimeOut";
-            this.btnTimeOut.Size = new System.Drawing.Size(133, 40);
-            this.btnTimeOut.TabIndex = 46;
-            this.btnTimeOut.Text = "Change TimeOut";
-            this.btnTimeOut.UseVisualStyleBackColor = true;
-            this.btnTimeOut.Click += new System.EventHandler(this.btnTimeOut_Click);
             // 
             // tabPage6
             // 
@@ -588,6 +537,58 @@
             this.tabPage6.Text = "Setup for new";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // btnResolution
+            // 
+            this.btnResolution.Location = new System.Drawing.Point(16, 62);
+            this.btnResolution.Name = "btnResolution";
+            this.btnResolution.Size = new System.Drawing.Size(133, 41);
+            this.btnResolution.TabIndex = 40;
+            this.btnResolution.Text = "Change Resolution";
+            this.btnResolution.UseVisualStyleBackColor = true;
+            this.btnResolution.Click += new System.EventHandler(this.btnResolution_Click);
+            // 
+            // btnLanguage
+            // 
+            this.btnLanguage.Location = new System.Drawing.Point(296, 13);
+            this.btnLanguage.Name = "btnLanguage";
+            this.btnLanguage.Size = new System.Drawing.Size(133, 40);
+            this.btnLanguage.TabIndex = 41;
+            this.btnLanguage.Text = "Change Language";
+            this.btnLanguage.UseVisualStyleBackColor = true;
+            this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
+            // 
+            // btnTimeOut
+            // 
+            this.btnTimeOut.Location = new System.Drawing.Point(16, 12);
+            this.btnTimeOut.Name = "btnTimeOut";
+            this.btnTimeOut.Size = new System.Drawing.Size(133, 40);
+            this.btnTimeOut.TabIndex = 46;
+            this.btnTimeOut.Text = "Change TimeOut";
+            this.btnTimeOut.UseVisualStyleBackColor = true;
+            this.btnTimeOut.Click += new System.EventHandler(this.btnTimeOut_Click);
+            // 
+            // btnRotation
+            // 
+            this.btnRotation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRotation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRotation.Location = new System.Drawing.Point(155, 13);
+            this.btnRotation.Name = "btnRotation";
+            this.btnRotation.Size = new System.Drawing.Size(133, 39);
+            this.btnRotation.TabIndex = 39;
+            this.btnRotation.Text = "Disable Rotation";
+            this.btnRotation.UseVisualStyleBackColor = true;
+            this.btnRotation.Click += new System.EventHandler(this.btnRotation_Click);
+            // 
+            // btnUnlock
+            // 
+            this.btnUnlock.Location = new System.Drawing.Point(830, 556);
+            this.btnUnlock.Name = "btnUnlock";
+            this.btnUnlock.Size = new System.Drawing.Size(84, 37);
+            this.btnUnlock.TabIndex = 45;
+            this.btnUnlock.Text = "UNLOCK";
+            this.btnUnlock.UseVisualStyleBackColor = true;
+            this.btnUnlock.Click += new System.EventHandler(this.btnUnlock_Click);
+            // 
             // btnLockType
             // 
             this.btnLockType.Location = new System.Drawing.Point(932, 556);
@@ -598,11 +599,21 @@
             this.btnLockType.UseVisualStyleBackColor = true;
             this.btnLockType.Click += new System.EventHandler(this.btnLockType_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1058, 569);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // PhonesController
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 605);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnLockType);
             this.Controls.Add(this.btnUnlock);
             this.Controls.Add(this.Controller);
@@ -682,6 +693,7 @@
         private System.Windows.Forms.Button btnTimeOut;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button btnLockType;
+        private System.Windows.Forms.Button button2;
     }
 }
 
